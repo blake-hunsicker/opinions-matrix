@@ -1,13 +1,36 @@
 import * as React from 'react'
-import Slider from '../components/slider'
-import '../components/styles/styles.css'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout'
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
+
+  const quizzes = data.quizzes
+
   return (
-    <main>
-      <Slider />
-    </main>
+    <Layout>
+      <div className='quiz-list'>
+        {quizzes.edges.map(({node}, index) => (
+          <Link to={node.data.quizName}>
+            <p>{node.data.quizName}</p>
+          </Link>
+        ))}
+      </div>
+    </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    quizzes: allAirtable {
+      edges {
+        node {
+          data {
+            quizName
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

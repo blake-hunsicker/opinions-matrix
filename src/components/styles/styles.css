@@ -2,6 +2,15 @@ body {
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
+
+nav {
+  padding: 0 1rem;
+  border-bottom: 1px solid black;
+}
+
 main {
   display: -ms-grid;
   display: grid;
@@ -10,9 +19,9 @@ main {
 }
 
 main .scatter-plot {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / 9;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 6;
+  grid-column: 2 / 8;
 }
 
 main .range-container {

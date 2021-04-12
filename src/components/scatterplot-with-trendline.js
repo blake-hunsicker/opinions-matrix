@@ -1,5 +1,5 @@
 import React from "react"
-import { scaleLinear, max, axisLeft, axisBottom, select } from "d3"
+import { scaleLinear, axisLeft, axisBottom, select } from "d3"
 
 function sortNumber(a, b) {
   return a - b
@@ -38,8 +38,9 @@ export default class ScatterPlot extends React.Component {
       <div>
         <h3>Scatter Plot</h3>
         <svg
-          width={width + margin.right + margin.left}
-          height={height + margin.top + margin.bottom}
+          // width={width + margin.right + margin.left}
+          // height={height + margin.top + margin.bottom}
+          viewBox='0 0 800 600'
           className="chart"
         >
           <g
@@ -53,6 +54,7 @@ export default class ScatterPlot extends React.Component {
               axis="x"
               transform={"translate(0," + height + ")"}
               scale={axisBottom().scale(x)}
+              ticks={axisBottom().ticks(5)}
             />
             <Axis
               axis="y"
