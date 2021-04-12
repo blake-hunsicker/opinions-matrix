@@ -1,5 +1,6 @@
 import React from 'react'
 import Firebase from 'gatsby-plugin-firebase'
+import ScatterPlot from '../components/scatterplot-with-trendline'
 
 const Sliders = () => {
 
@@ -13,20 +14,22 @@ const Sliders = () => {
       const qTwo = document.querySelector('.questionTwo').value
       console.log(qOne)
       quiz.add({
-        questionOne: qOne,
-        questionTwo: qTwo,
+        x: qOne,
+        y: qTwo,
         clickTime: Firebase.firestore.Timestamp.fromDate(new Date())
       })
     }
 
     quiz.onSnapshot((querySnapshot) => {
+      const graphData = []
       const clicks = []
       querySnapshot.forEach((doc) => {
         const clickId = doc.id
-        const answerOne = doc.data().questionOne
-        const answerTwo = doc.data().questionTwo
+        const answerOne = doc.data().x
+        const answerTwo = doc.data().y
         const clickTime = doc.data().clickTime
 
+        graphData.push([answerOne, answerTwo])
         clicks.push(
           <div className='past-click' data-timestamp={clickTime} key={clickId}>
             <h4>Past click:</h4>
@@ -40,6 +43,9 @@ const Sliders = () => {
       })
       setData(
         <>
+          <div className='scatter-plot'>
+            <ScatterPlot data={graphData} />
+          </div>
           <div className='range-container'>
             <div className='question'>
               <label>How much student debt should be cancelled?</label>

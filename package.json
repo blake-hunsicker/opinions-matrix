@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "d3": "^6.6.2",
     "firebase": "^8.3.3",
     "firebase-admin": "^9.6.0",
     "gatsby": "^3.2.1",

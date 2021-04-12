@@ -4,6 +4,8 @@ body
 main
   display: grid
   grid-template-columns: repeat(8, 1fr)
+  .scatter-plot
+    grid-column: 1 / 9
   .range-container
     grid-column: 2 / 8
     .question
@@ -33,6 +35,8 @@ main
 
 @media only screen and ( min-width: 768px )
 
+  .scatter-plot
+    grid-column: 2 / 8
   .range-container
     grid-column: 2 / 8
   .past-clicks

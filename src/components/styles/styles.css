@@ -9,6 +9,12 @@ main {
       grid-template-columns: repeat(8, 1fr);
 }
 
+main .scatter-plot {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+}
+
 main .range-container {
   -ms-grid-column: 2;
   -ms-grid-column-span: 6;
@@ -62,6 +68,11 @@ main .past-clicks .past-click {
 }
 
 @media only screen and (min-width: 768px) {
+  .scatter-plot {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 6;
+    grid-column: 2 / 8;
+  }
   .range-container {
     -ms-grid-column: 2;
     -ms-grid-column-span: 6;
