@@ -10,7 +10,7 @@ const IndexPage = ({data}) => {
     <Layout>
       <div className='quiz-list'>
         {quizzes.edges.map(({node}, index) => (
-          <Link to={node.data.quizName}>
+          <Link to={node.data.quizName} key={index}>
             <p>{node.data.quizName}</p>
           </Link>
         ))}

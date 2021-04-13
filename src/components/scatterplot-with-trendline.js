@@ -16,6 +16,10 @@ export default class ScatterPlot extends React.Component {
     const height = 600 - margin.top - margin.bottom
     const data = this.props.data
 
+    const xTicks = this.props.xTicks
+    const yTicks = this.props.yTicks
+
+
     const x = scaleLinear()
       .domain([
         0, 100
@@ -53,13 +57,12 @@ export default class ScatterPlot extends React.Component {
             <Axis
               axis="x"
               transform={"translate(0," + height + ")"}
-              scale={axisBottom().scale(x)}
-              ticks={axisBottom().ticks(5)}
+              scale={axisBottom().scale(x).ticks(3).tickFormat((d, i) => `${xTicks[i]}`)}
             />
             <Axis
               axis="y"
               transform="translate(0,0)"
-              scale={axisLeft().scale(y)}
+              scale={axisLeft().scale(y).ticks(3).tickFormat((d, i) => `${yTicks[i]}`)}
             />
           </g>
         </svg>
