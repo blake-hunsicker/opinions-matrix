@@ -18,16 +18,38 @@ main {
       grid-template-columns: repeat(8, 1fr);
 }
 
+main .hero, main .article-body {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  margin: 0 1rem;
+}
+
+main .article-body {
+  padding: 0 0 2rem;
+  border-bottom: 1px solid black;
+  margin: 0 1rem 2rem;
+}
+
+main .quiz-list {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  margin: 0 1rem;
+}
+
 main .scatter-plot {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 6;
-  grid-column: 2 / 8;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  margin: 0 1rem;
 }
 
 main .range-container {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 6;
-  grid-column: 2 / 8;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  margin: 0 1rem 4rem;
 }
 
 main .range-container .question {
@@ -41,6 +63,7 @@ main .range-container .question label {
 
 main .range-container .question input {
   width: 100%;
+  cursor: pointer;
 }
 
 main .range-container .question .ticks {
@@ -63,7 +86,22 @@ main .range-container .question .ticks .tick:nth-of-type(3) {
   text-align: right;
 }
 
+main .range-container .disabled {
+  color: #ccc;
+}
+
+main .range-container .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .range-container .submit-button {
+  margin: 0 1rem 0 0;
+}
+
 main .past-clicks {
+  display: none;
   -ms-grid-column: 2;
   -ms-grid-column-span: 6;
   grid-column: 2 / 8;
@@ -77,20 +115,25 @@ main .past-clicks .past-click {
 }
 
 @media only screen and (min-width: 768px) {
-  .scatter-plot {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 6;
-    grid-column: 2 / 8;
+  main .hero, main .article-body {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+    grid-column: 3 / 7;
   }
-  .range-container {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 6;
-    grid-column: 2 / 8;
+  main .scatter-plot {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+    grid-column: 3 / 7;
   }
-  .past-clicks {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 6;
-    grid-column: 2 / 8;
+  main .range-container {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+    grid-column: 3 / 7;
+  }
+  main .past-clicks {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+    grid-column: 3 / 7;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -9,6 +9,34 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
   React.useEffect(() => {
     const quiz = Firebase.firestore().collection('quizzes').doc(`${quizName}`).collection('clicks')
 
+    function enableNextQuestion(e) {
+      const disabledSlider = document.querySelector('.disabled')
+      if (!disabledSlider) {} else {
+        disabledSlider.classList.remove('disabled')
+      }
+      
+      const rangeSlider = document.querySelector('.questionTwo')
+      rangeSlider.disabled = false
+      
+    }
+
+    function enableSubmit(e) {
+      console.log('hello')
+      const button = document.querySelector('.submit-button')
+      button.classList.remove('disabled')
+      button.addEventListener('click',answerQuiz)
+
+    }
+
+    function skipToAnswers(e) {
+      const scatterPlot = document.querySelector('.scatter-plot')
+      scatterPlot.classList.toggle('hidden')
+      const rangeContainer = document.querySelector('.range-container')
+      rangeContainer.classList.toggle('hidden')
+      const pastClicks = document.querySelector('.past-clicks')
+      pastClicks.classList.toggle('hidden')
+    }
+
     function answerQuiz(e) {
       const scatterPlot = document.querySelector('.scatter-plot')
       scatterPlot.classList.toggle('hidden')
@@ -25,7 +53,9 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
       })
     }
 
-    quiz.onSnapshot((querySnapshot) => {
+
+
+    quiz.orderBy('clickTime', 'desc').onSnapshot((querySnapshot) => {
       const graphData = []
       const clicks = []
       querySnapshot.forEach((doc) => {
@@ -53,25 +83,30 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
           <div className='range-container'>
             <div className='question'>
               <label>{xQuestion}</label>
-              <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onChange={(event) => console.log(`${event.target.className}: ${event.target.value}`)} />
+              <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
               <div className="ticks">
                 <span className="tick">{xRangeLowTickLabel}</span>
                 <span className="tick">{xRangeMidTickLabel}</span>
                 <span className="tick">{xRangeHighTickLabel}</span>
               </div>
             </div>
-            <div className='question'>
+            <div className='question disabled'>
               <label>{yQuestion}</label>
-              <input type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={(event) => console.log(`${event.target.className}: ${event.target.value}`)} />
+              <input disabled type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
               <div className="ticks">
                 <span className="tick">{yRangeLowTickLabel}</span>
                 <span className="tick">{yRangeMidTickLabel}</span>
                 <span className="tick">{yRangeHighTickLabel}</span>
               </div>
             </div>
-            <button onClick={answerQuiz}>
-              Submit
-            </button>
+            <div className='buttons'>
+              <button className='submit-button disabled'>
+                Submit
+              </button>
+              <button className='skip-button' onClick={skipToAnswers}>
+                Skip and See Answers
+              </button>
+            </div>
           </div>
           <div className='past-clicks'>
             {clicks}

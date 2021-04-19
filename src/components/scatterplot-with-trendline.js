@@ -1,5 +1,5 @@
 import React from "react"
-import { scaleLinear, axisLeft, axisBottom, select } from "d3"
+import { scaleLinear, axisLeft, axisBottom, select, min } from "d3"
 
 function sortNumber(a, b) {
   return a - b
@@ -40,10 +40,8 @@ export default class ScatterPlot extends React.Component {
 
     return (
       <div>
-        <h3>Scatter Plot</h3>
+        <h3>Results</h3>
         <svg
-          // width={width + margin.right + margin.left}
-          // height={height + margin.top + margin.bottom}
           viewBox='0 0 800 600'
           className="chart"
         >
@@ -73,14 +71,24 @@ export default class ScatterPlot extends React.Component {
 
 class RenderCircles extends React.Component {
   render() {
+    const array = this.props.data
     let renderCircles = this.props.data.map((coords, i) => (
-      <circle
-        cx={this.props.scale.x(coords[0])}
-        cy={this.props.scale.y(coords[1])}
-        r="8"
-        style={{ fill: "rgba(25, 158, 199, .9)" }}
-        key={i}
-      />
+      i != 0 ?
+        <circle
+          cx={this.props.scale.x(coords[0])}
+          cy={this.props.scale.y(coords[1])}
+          r="8"
+          style={{ fill: "rgba(25, 158, 199, .9)" }}
+          key={i}
+        />
+      :
+        <circle
+          cx={this.props.scale.x(coords[0])}
+          cy={this.props.scale.y(coords[1])}
+          r="12"
+          style={{ fill: "rgba(0,0,0,1)" }}
+          key={i}
+        />
     ))
     return <g>{renderCircles}</g>
   }

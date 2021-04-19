@@ -11,10 +11,22 @@ nav
 main
   display: grid
   grid-template-columns: repeat(8, 1fr)
+  .hero, .article-body
+    grid-column: 1 / 9
+    margin: 0 1rem
+  .article-body
+    padding: 0 0 2rem
+    border-bottom: 1px solid black
+    margin: 0 1rem 2rem
+  .quiz-list
+    grid-column: 1 / 9
+    margin: 0 1rem
   .scatter-plot
-    grid-column: 2 / 8
+    grid-column: 1 / 9
+    margin: 0 1rem
   .range-container
-    grid-column: 2 / 8
+    grid-column: 1 / 9
+    margin: 0 1rem 4rem
     .question
       margin: 1rem 0 4rem
       label
@@ -22,6 +34,7 @@ main
         margin: 0 0 1rem
       input
         width: 100%
+        cursor: pointer
       .ticks
         display: grid
         grid-template-columns: repeat(3, 1fr)
@@ -32,7 +45,14 @@ main
           text-align: left
         .tick:nth-of-type(3)
           text-align: right
+    .disabled
+      color: #ccc
+    .buttons
+      display: flex
+    .submit-button
+      margin: 0 1rem 0 0
   .past-clicks
+    display: none
     grid-column: 2 / 8
     margin: 4rem auto
     .past-click
@@ -41,10 +61,12 @@ main
       margin: 0 0 1rem
 
 @media only screen and ( min-width: 768px )
-
-  .scatter-plot
-    grid-column: 2 / 8
-  .range-container
-    grid-column: 2 / 8
-  .past-clicks
-    grid-column: 2 / 8
+  main
+    .hero, .article-body
+      grid-column: 3 / 7
+    .scatter-plot
+      grid-column: 3 / 7
+    .range-container
+      grid-column: 3 / 7
+    .past-clicks
+      grid-column: 3 / 7
