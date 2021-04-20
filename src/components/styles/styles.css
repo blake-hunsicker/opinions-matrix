@@ -1,5 +1,6 @@
 body {
-  margin: 0;
+  margin: 0 1rem;
+  font-family: nunito, sans-serif;
 }
 
 .hidden {
@@ -8,7 +9,17 @@ body {
 
 nav {
   padding: 0 1rem;
+  text-align: center;
   border-bottom: 1px solid black;
+}
+
+circle {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+nav a {
+  text-decoration: none;
 }
 
 main {
@@ -94,6 +105,17 @@ main .range-container .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
 }
 
 main .range-container .submit-button {
@@ -112,6 +134,10 @@ main .past-clicks .past-click {
   padding: 1rem;
   background: #eee;
   margin: 0 0 1rem;
+}
+
+.scatter-plot h3 {
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
