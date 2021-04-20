@@ -1,7 +1,6 @@
 import React from 'react'
 import Firebase from 'gatsby-plugin-firebase'
-// import ScatterPlot from '../components/scatterplot-with-trendline'
-import ScatterPlot from '../components/scatterplot_middleaxes'
+import ScatterPlot from '../components/scatterplot-with-trendline'
 
 const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, xRangeHighTickLabel, yQuestion, yRangeLowTickLabel, yRangeMidTickLabel, yRangeHighTickLabel}) => {
 
@@ -102,7 +101,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
             </div>
             <div className='buttons'>
               <button className='submit-button disabled'>
-                See How You Compare To Others...
+                See How You Compare To Others
               </button>
               <button className='skip-button' onClick={skipToAnswers}>
                 Skip and See Answers
