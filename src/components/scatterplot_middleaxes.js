@@ -54,12 +54,12 @@ export default class ScatterPlot extends React.Component {
             <RenderCircles data={data} scale={{ x, y }} />
             <Axis
               axis="x"
-              transform={"translate(0," + height + ")"}
+              transform={"translate(0," + height/2 + ")"}
               scale={axisBottom().scale(x).ticks(3).tickFormat((d, i) => `${xTicks[i]}`)}
             />
             <Axis
               axis="y"
-              transform="translate(0,0)"
+              transform={"translate(" + width/2 + ", 0)"}
               scale={axisLeft().scale(y).ticks(3).tickFormat((d, i) => `${yTicks[i]}`)}
             />
           </g>
