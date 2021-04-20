@@ -34,6 +34,13 @@ main .hero, main .article-body {
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
   margin: 0 1rem;
+  font-family: Georgia,Times,Times New Roman,serif;
+  font-family: Miller,Georgia,Times,Times New Roman,serif;
+}
+
+main .hero h3 {
+  font-family: BentonSansCond,Helvetica,Arial,sans-serif;
+  font-size: smaller;
 }
 
 main .article-body {
