@@ -9,9 +9,9 @@ export default class ScatterPlot extends React.Component {
   constructor(props) {
     super(props)
   }
-
+  
   render() {
-    const margin = { top: 20, right: 15, bottom: 60, left: 60 }
+    const margin = { top: 20, right: 80, bottom: 60, left: 80 }
     const width = 800 - margin.left - margin.right
     const height = 600 - margin.top - margin.bottom
     const data = this.props.data
@@ -40,7 +40,7 @@ export default class ScatterPlot extends React.Component {
 
     return (
       <div>
-        <h3>Results</h3>
+        <h3>Your Results</h3>
         <svg
           viewBox='0 0 800 600'
           className="chart"
@@ -78,7 +78,7 @@ class RenderCircles extends React.Component {
           cx={this.props.scale.x(coords[0])}
           cy={this.props.scale.y(coords[1])}
           r="8"
-          style={{ fill: "rgba(25, 158, 199, .9)" }}
+          style={{ fill: "rgba(25, 158, 199, 0.3)" }}
           key={i}
         />
       :
@@ -86,7 +86,8 @@ class RenderCircles extends React.Component {
           cx={this.props.scale.x(coords[0])}
           cy={this.props.scale.y(coords[1])}
           r="12"
-          style={{ fill: "rgba(0,0,0,1)" }}
+          style={{ fill: "rgba(25, 158, 199, 0.5)"}}
+          style={{ filter: "blur(0.3px)"}}
           key={i}
         />
     ))
