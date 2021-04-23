@@ -19,7 +19,6 @@ export default class ScatterPlot extends React.Component {
     const xTicks = this.props.xTicks
     const yTicks = this.props.yTicks
 
-
     const x = scaleLinear()
       .domain([
         0, 100
@@ -65,7 +64,9 @@ export default class ScatterPlot extends React.Component {
           </g>
         </svg>
       </div>
+      
     )
+
   }
 }
 

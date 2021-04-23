@@ -63,6 +63,10 @@ main .scatter-plot {
   margin: 0 1rem;
 }
 
+main .scatter-plot .tick:nth-child(3) {
+  visibility: hidden;
+}
+
 main .range-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
@@ -139,7 +143,7 @@ main .past-clicks {
 
 main .past-clicks .past-click {
   padding: 1rem;
-  background: #eee;
+  background: red;
   margin: 0 0 1rem;
 }
 
