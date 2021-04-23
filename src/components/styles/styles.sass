@@ -20,7 +20,7 @@ nav a
 main
   display: grid
   grid-template-columns: repeat(8, 1fr)
-  .hero, .article-body
+  .hero, .article-body, .article
     grid-column: 1 / 9
     margin: 0 1rem
     font-family: Georgia,Times,Times New Roman,serif
@@ -86,7 +86,7 @@ main
 
 @media only screen and ( min-width: 768px )
   main
-    .hero, .article-body
+    .hero, .article-body, .article
       grid-column: 3 / 7
     .scatter-plot
       grid-column: 3 / 7

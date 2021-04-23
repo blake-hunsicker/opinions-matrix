@@ -3,13 +3,24 @@ import { graphql } from 'gatsby'
 import Slider from '../components/slider'
 import Layout from '../components/layout'
 import Dummy from '../components/dummy'
+import unified from 'unified'
+import markdown from 'remark-parse'
+import html from 'remark-html'
 
 const Quiz = ({ data }) => {
   const quiz = data.quiz.data
 
   return(
     <Layout>
-      <Dummy dummyText={quiz.dummyText}/>
+      <div
+        className='article'
+        dangerouslySetInnerHTML={{
+          __html: unified()
+            .use(markdown)
+            .use(html)
+            .processSync(quiz.articleText)
+        }}
+      />
       <Slider
         quizName={quiz.quizName}
         xQuestion={quiz.xQuestion}
@@ -44,6 +55,7 @@ export const query = graphql`
         yRangeMidTickLabel
         yRangeHighTickLabel
         dummyText
+        articleText
       }
     }
   }

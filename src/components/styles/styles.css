@@ -29,7 +29,7 @@ main {
       grid-template-columns: repeat(8, 1fr);
 }
 
-main .hero, main .article-body {
+main .hero, main .article-body, main .article {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
@@ -152,7 +152,7 @@ main .past-clicks .past-click {
 }
 
 @media only screen and (min-width: 768px) {
-  main .hero, main .article-body {
+  main .hero, main .article-body, main .article {
     -ms-grid-column: 3;
     -ms-grid-column-span: 4;
     grid-column: 3 / 7;

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useStaticQuery } from 'gatsby'
 import '../components/styles/styles.css'
 
 const Dummy = ({children}) => {
