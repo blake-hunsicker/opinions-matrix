@@ -1,4 +1,5 @@
 import React from "react"
+import Firebase from 'gatsby-plugin-firebase'
 import { scaleLinear, axisLeft, axisBottom, select, min } from "d3"
 
 function sortNumber(a, b) {

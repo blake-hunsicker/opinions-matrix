@@ -39,6 +39,8 @@ main
   .scatter-plot
     grid-column: 1 / 9
     margin: 0 1rem
+    .tick:nth-child(3)  // to hide middle tick on scatter plot
+      visibility: hidden;
   .range-container
     grid-column: 1 / 9
     margin: 0 1rem 4rem
@@ -76,7 +78,7 @@ main
     margin: 4rem auto
     .past-click
       padding: 1rem
-      background: #eee
+      background: red
       margin: 0 0 1rem
 
 .scatter-plot h3
