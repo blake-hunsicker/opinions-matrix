@@ -26,6 +26,7 @@ nav a {
 img {
   width: 100%;
   height: auto;
+  max-width: 850px;
 }
 
 button {
@@ -151,10 +152,6 @@ main .range-container .buttons {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 10px;
-}
-
-main .range-container .submit-button {
-  margin: 0 1rem 0 0;
 }
 
 main .past-clicks {
