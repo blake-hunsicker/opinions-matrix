@@ -3,7 +3,7 @@ import Firebase from 'gatsby-plugin-firebase'
 // import ScatterPlot from '../components/scatterplot-with-trendline'
 import ScatterPlot from '../components/scatterplot_middleaxes'
 
-const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, xRangeHighTickLabel, yQuestion, yRangeLowTickLabel, yRangeMidTickLabel, yRangeHighTickLabel}) => {
+const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, xRangeHighTickLabel, yQuestion, yRangeLowTickLabel, yRangeMidTickLabel, yRangeHighTickLabel, UI}) => {
 
   const [data, setData] = React.useState(null)
 
@@ -11,9 +11,17 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
     const quiz = Firebase.firestore().collection('quizzes').doc(`${quizName}`).collection('clicks')
 
     function enableNextQuestion(e) {
-      const disabledSlider = document.querySelector('.disabled')
+      e.preventDefault()
+      const disabledSlider = document.querySelector('.question.disabled')
+
       if (!disabledSlider) {} else {
         disabledSlider.classList.remove('disabled')
+      }
+
+      const hiddenSlider = document.querySelector('.question.hidden')
+
+      if (!hiddenSlider) {} else {
+        hiddenSlider.classList.remove('hidden')
       }
       
       const rangeSlider = document.querySelector('.questionTwo')
@@ -22,7 +30,6 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
     }
 
     function enableSubmit(e) {
-      console.log('hello')
       const button = document.querySelector('.submit-button')
       button.classList.remove('disabled')
       button.addEventListener('click',answerQuiz)
@@ -58,8 +65,6 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
       })
     }
 
-
-
     quiz.orderBy('clickTime', 'desc').onSnapshot((querySnapshot) => {
       const graphData = []
       const clicks = []
@@ -86,24 +91,72 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
             <ScatterPlot data={graphData} xTicks={[xRangeLowTickLabel,xRangeMidTickLabel,xRangeHighTickLabel]} yTicks={[yRangeLowTickLabel,yRangeMidTickLabel,yRangeHighTickLabel]} />
           </div>
           <div className='range-container'>
-            <div className='question'>
-              <label>{xQuestion}</label>
-              <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
-              <div className="ticks">
-                <span className="tick">{xRangeLowTickLabel}</span>
-                <span className="tick">{xRangeMidTickLabel}</span>
-                <span className="tick">{xRangeHighTickLabel}</span>
-              </div>
-            </div>
-            <div className='question disabled'>
-              <label>{yQuestion}</label>
-              <input disabled type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
-              <div className="ticks">
-                <span className="tick">{yRangeLowTickLabel}</span>
-                <span className="tick">{yRangeMidTickLabel}</span>
-                <span className="tick">{yRangeHighTickLabel}</span>
-              </div>
-            </div>
+            {
+              UI == 'secondQuestionGray' ?
+                <>
+                  <div className='question'>
+                    <label>{xQuestion}</label>
+                    <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
+                    <div className="ticks">
+                      <span className="tick">{xRangeLowTickLabel}</span>
+                      <span className="tick">{xRangeMidTickLabel}</span>
+                      <span className="tick">{xRangeHighTickLabel}</span>
+                    </div>
+                  </div>
+                  <div className='question disabled'>
+                    <label>{yQuestion}</label>
+                    <input disabled type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <div className="ticks">
+                      <span className="tick">{yRangeLowTickLabel}</span>
+                      <span className="tick">{yRangeMidTickLabel}</span>
+                      <span className="tick">{yRangeHighTickLabel}</span>
+                    </div>
+                  </div>
+                </>
+              : UI == 'secondQuestionHidden' ?
+                <>
+                  <div className='question'>
+                    <h1>SecondQuestionHidden</h1>
+                    <label>{xQuestion}</label>
+                    <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
+                    <div className="ticks">
+                      <span className="tick">{xRangeLowTickLabel}</span>
+                      <span className="tick">{xRangeMidTickLabel}</span>
+                      <span className="tick">{xRangeHighTickLabel}</span>
+                    </div>
+                  </div>
+                  <div className='question hidden'>
+                    <label>{yQuestion}</label>
+                    <input disabled type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <div className="ticks">
+                      <span className="tick">{yRangeLowTickLabel}</span>
+                      <span className="tick">{yRangeMidTickLabel}</span>
+                      <span className="tick">{yRangeHighTickLabel}</span>
+                    </div>
+                  </div>
+                </>
+                :
+                <>
+                  <div className='question'>
+                    <label>{xQuestion}</label>
+                    <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' />
+                    <div className="ticks">
+                      <span className="tick">{xRangeLowTickLabel}</span>
+                      <span className="tick">{xRangeMidTickLabel}</span>
+                      <span className="tick">{xRangeHighTickLabel}</span>
+                    </div>
+                  </div>
+                  <div className='question'>
+                    <label>{yQuestion}</label>
+                    <input type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <div className="ticks">
+                      <span className="tick">{yRangeLowTickLabel}</span>
+                      <span className="tick">{yRangeMidTickLabel}</span>
+                      <span className="tick">{yRangeHighTickLabel}</span>
+                    </div>
+                  </div>
+                </>
+            }
             <div className='buttons'>
               <button className='submit-button disabled'>
                 See How You Compare To Others...

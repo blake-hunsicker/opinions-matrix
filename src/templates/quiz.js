@@ -47,6 +47,7 @@ const Quiz = ({ data }) => {
         yRangeLowTickLabel={quiz.yRangeLowTickLabel}
         yRangeMidTickLabel={quiz.yRangeMidTickLabel}
         yRangeHighTickLabel={quiz.yRangeHighTickLabel}
+        UI={quiz.UI}
       />
       </div>
     </Layout>
@@ -75,6 +76,7 @@ export const query = graphql`
         articleHeadline
         articlePhoto
         articleBody
+        UI
       }
     }
   }
