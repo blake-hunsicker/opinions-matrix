@@ -36,6 +36,9 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
       rangeContainer.classList.toggle('hidden')
       const pastClicks = document.querySelector('.past-clicks')
       pastClicks.classList.toggle('hidden')
+      const lastCircle = document.querySelector('.last_circle')
+      lastCircle.classList.toggle('hidden')
+      
     }
 
     function answerQuiz(e) {

@@ -1,5 +1,5 @@
 body {
-  margin: 0 1rem;
+  margin: 0 5rem;
   font-family: nunito, sans-serif;
 }
 
@@ -18,15 +18,25 @@ circle {
           filter: blur(3px);
 }
 
+.last_circle {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+}
+
 nav a {
   text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
 
 main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[8];
-      grid-template-columns: repeat(8, 1fr);
+  -ms-grid-columns: (1fr)[8] s;
+      grid-template-columns: repeat(8, 1fr) s;
 }
 
 main .hero, main .article-body, main .article {
@@ -43,10 +53,15 @@ main .hero h3 {
   font-size: smaller;
 }
 
-main .article-body {
-  padding: 0 0 2rem;
-  border-bottom: 1px solid black;
+main .article {
   margin: 0 1rem 2rem;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+main .container {
+  padding: 0 1rem;
+  max-width: 60%;
 }
 
 main .quiz-list {

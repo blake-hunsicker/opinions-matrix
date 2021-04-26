@@ -12,15 +12,31 @@ const Quiz = ({ data }) => {
 
   return(
     <Layout>
+      <div class="container"><div
+        className='article'
+        dangerouslySetInnerHTML={{
+          __html: unified()
+            .use(markdown)
+            .use(html)
+            .processSync(quiz.articleHeadline)
+        }}
+      />
+      <div 
+        className='articlePhoto'
+        dangerouslySetInnerHTML={{
+          __html: "<img src='" + quiz.articlePhoto + "'>" 
+        }}
+      />
       <div
         className='article'
         dangerouslySetInnerHTML={{
           __html: unified()
             .use(markdown)
             .use(html)
-            .processSync(quiz.articleText)
+            .processSync(quiz.articleBody)
         }}
       />
+      
       <Slider
         quizName={quiz.quizName}
         xQuestion={quiz.xQuestion}
@@ -32,7 +48,9 @@ const Quiz = ({ data }) => {
         yRangeMidTickLabel={quiz.yRangeMidTickLabel}
         yRangeHighTickLabel={quiz.yRangeHighTickLabel}
       />
+      </div>
     </Layout>
+
   )
 }
 export const query = graphql`
@@ -54,8 +72,9 @@ export const query = graphql`
         yRangeLowTickLabel
         yRangeMidTickLabel
         yRangeHighTickLabel
-        dummyText
-        articleText
+        articleHeadline
+        articlePhoto
+        articleBody
       }
     }
   }

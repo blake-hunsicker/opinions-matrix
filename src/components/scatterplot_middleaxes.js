@@ -79,7 +79,7 @@ class RenderCircles extends React.Component {
           cx={this.props.scale.x(coords[0])}
           cy={this.props.scale.y(coords[1])}
           r="8"
-          style={{ fill: "rgba(25, 158, 199, 0.3)" }}
+          style={{ fill: "rgba(253, 21, 78, 0.3)" }}
           key={i}
         />
       :
@@ -87,8 +87,8 @@ class RenderCircles extends React.Component {
           cx={this.props.scale.x(coords[0])}
           cy={this.props.scale.y(coords[1])}
           r="12"
-          style={{ fill: "rgba(25, 158, 199, 0.5)"}}
-          style={{ filter: "blur(0.3px)"}}
+          style={{fill: "blue"}}
+          className="last_circle"
           key={i}
         />
     ))
