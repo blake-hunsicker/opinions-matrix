@@ -12,7 +12,7 @@ const Quiz = ({ data }) => {
 
   return(
     <Layout>
-      <div class="container"><div
+      <div className="container"><div
         className='article'
         dangerouslySetInnerHTML={{
           __html: unified()
