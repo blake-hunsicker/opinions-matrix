@@ -24,7 +24,7 @@ const Quiz = ({ data }) => {
       <div 
         className='articlePhoto'
         dangerouslySetInnerHTML={{
-          __html: "<img src='" + quiz.articlePhoto + "'>" 
+          __html: "<img src='" + (quiz.articlePhoto) + "'>" 
         }}
       />
       <div
