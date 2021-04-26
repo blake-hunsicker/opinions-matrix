@@ -88,7 +88,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
       setData(
         <>
           <div className='scatter-plot hidden'>
-            <ScatterPlot data={graphData} xTicks={[xRangeLowTickLabel,xRangeMidTickLabel,xRangeHighTickLabel]} yTicks={[yRangeLowTickLabel,yRangeMidTickLabel,yRangeHighTickLabel]} />
+            <ScatterPlot label={[xQuestion, yQuestion]}  data={graphData} xTicks={[xRangeLowTickLabel,xRangeMidTickLabel,xRangeHighTickLabel]} yTicks={[yRangeLowTickLabel,yRangeMidTickLabel,yRangeHighTickLabel]} />
           </div>
           <div className='range-container'>
             {
@@ -116,7 +116,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
               : UI == 'secondQuestionHidden' ?
                 <>
                   <div className='question'>
-                    <h1>SecondQuestionHidden</h1>
+                    {/* <h1>SecondQuestionHidden</h1> */}
                     <label>{xQuestion}</label>
                     <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
                     <div className="ticks">

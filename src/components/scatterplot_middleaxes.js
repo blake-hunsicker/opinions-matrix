@@ -1,6 +1,6 @@
 import React from "react"
 import { scaleLinear, axisLeft, axisBottom, select, min } from "d3"
-
+import { FaArrowsAltV, FaArrowsAltH } from 'react-icons/fa';
 function sortNumber(a, b) {
   return a - b
 }
@@ -18,6 +18,7 @@ export default class ScatterPlot extends React.Component {
 
     const xTicks = this.props.xTicks
     const yTicks = this.props.yTicks
+    const label = this.props.label
 
     const x = scaleLinear()
       .domain([
@@ -39,7 +40,6 @@ export default class ScatterPlot extends React.Component {
 
     return (
       <div>
-        <h3>Your Results</h3>
         <svg
           viewBox='0 0 800 600'
           className="chart"
@@ -63,6 +63,7 @@ export default class ScatterPlot extends React.Component {
             />
           </g>
         </svg>
+        <p className='answerTitle'><FaArrowsAltH/> {label[0]} <FaArrowsAltV/> {label[1]}</p>
       </div>
       
     )

@@ -7,7 +7,7 @@ const Layout = ({children}) => {
   return (
     <>
     <nav>
-      <Link to='/'><h4>Sentiment Slider Test V3</h4></Link>
+      <Link to='/'><h4>Sentiment Slider Test V3.1</h4></Link>
     </nav>
     <main>
       {children}

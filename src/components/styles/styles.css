@@ -168,8 +168,12 @@ main .past-clicks .past-click {
   margin: 0 0 1rem;
 }
 
-.scatter-plot h3 {
+main .answerTitle {
   text-align: center;
+  font-size: 8px;
+  border: 1px dotted gray;
+  margin: 3em;
+  padding: 1em;
 }
 
 @media only screen and (min-width: 768px) {
