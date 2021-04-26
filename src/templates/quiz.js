@@ -28,7 +28,7 @@ const Quiz = ({ data }) => {
         }}
       />
       <div
-        className='article'
+        className='article article-body'
         dangerouslySetInnerHTML={{
           __html: unified()
             .use(markdown)

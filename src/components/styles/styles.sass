@@ -1,6 +1,7 @@
 body
-  margin: 0 5rem
+  margin: 0 auto
   font-family: nunito, sans-serif
+  max-width: 850px
 .hidden
   display: none
 nav
@@ -18,6 +19,8 @@ nav a
 img
   width: 100%
   height: auto
+button  
+  margin-top: 10px 
   
 main
   display: grid
@@ -25,20 +28,21 @@ main
   .hero, .article-body, .article
     grid-column: 1 / 9
     margin: 0 1rem
-    font-family: Georgia,Times,Times New Roman,serif
     font-family: Miller,Georgia,Times,Times New Roman,serif
   .hero h3
     font-family: BentonSansCond,Helvetica,Arial,sans-serif
     font-size: smaller
   .article
     margin: 0 1rem 2rem
-    font-size: 18px
     line-height: 1.8
   .articlePhoto
     max-width: 100%
+  .article-body
+      border-bottom: 1px solid black
+      padding-bottom: 3rem
+      margin-bottom: 5rem
   .container  
-    padding: 0 1rem
-    max-width: 60%
+    grid-column: 1 / 9 
   .quiz-list
     grid-column: 1 / 9
     margin: 0 1rem
@@ -92,10 +96,12 @@ main
 @media only screen and ( min-width: 768px )
   main
     .hero, .article-body, .article
-      grid-column: 3 / 7
+      grid-column: 1 / 9
     .scatter-plot
-      grid-column: 3 / 7
+      grid-column: 1 / 9
     .range-container
-      grid-column: 3 / 7
+      grid-column: 1 / 9
     .past-clicks
-      grid-column: 3 / 7
+      grid-column: 1 / 9
+    .tick 
+      

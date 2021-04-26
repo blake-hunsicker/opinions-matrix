@@ -1,6 +1,7 @@
 body {
-  margin: 0 5rem;
+  margin: 0 auto;
   font-family: nunito, sans-serif;
+  max-width: 850px;
 }
 
 .hidden {
@@ -27,6 +28,10 @@ img {
   height: auto;
 }
 
+button {
+  margin-top: 10px;
+}
+
 main {
   display: -ms-grid;
   display: grid;
@@ -39,7 +44,6 @@ main .hero, main .article-body, main .article {
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
   margin: 0 1rem;
-  font-family: Georgia,Times,Times New Roman,serif;
   font-family: Miller,Georgia,Times,Times New Roman,serif;
 }
 
@@ -50,7 +54,6 @@ main .hero h3 {
 
 main .article {
   margin: 0 1rem 2rem;
-  font-size: 18px;
   line-height: 1.8;
 }
 
@@ -58,9 +61,16 @@ main .articlePhoto {
   max-width: 100%;
 }
 
+main .article-body {
+  border-bottom: 1px solid black;
+  padding-bottom: 3rem;
+  margin-bottom: 5rem;
+}
+
 main .container {
-  padding: 0 1rem;
-  max-width: 60%;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
 }
 
 main .quiz-list {
@@ -167,24 +177,24 @@ main .past-clicks .past-click {
 
 @media only screen and (min-width: 768px) {
   main .hero, main .article-body, main .article {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 4;
-    grid-column: 3 / 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    grid-column: 1 / 9;
   }
   main .scatter-plot {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 4;
-    grid-column: 3 / 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    grid-column: 1 / 9;
   }
   main .range-container {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 4;
-    grid-column: 3 / 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    grid-column: 1 / 9;
   }
   main .past-clicks {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 4;
-    grid-column: 3 / 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    grid-column: 1 / 9;
   }
 }
 /*# sourceMappingURL=styles.css.map */
