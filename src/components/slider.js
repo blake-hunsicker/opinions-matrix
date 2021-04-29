@@ -162,7 +162,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                 See How You Compare To Others...
               </button>
               <button className='skip-button' onClick={skipToAnswers}>
-                Skip and See Answers
+                Skip to Responses
               </button>
             </div>
           </div>

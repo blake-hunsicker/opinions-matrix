@@ -1,6 +1,7 @@
 import React from "react"
 import { scaleLinear, axisLeft, axisBottom, select, min } from "d3"
 import { FaArrowsAltV, FaArrowsAltH } from 'react-icons/fa';
+
 function sortNumber(a, b) {
   return a - b
 }
@@ -40,6 +41,8 @@ export default class ScatterPlot extends React.Component {
 
     return (
       <div>
+        <div className='toolTip'><span class="tooltiptext"></span></div>
+        <p className='answerTitle'><FaArrowsAltH/> {label[0]} <FaArrowsAltV/> {label[1]}</p>
         <svg
           viewBox='0 0 800 600'
           className="chart"
@@ -63,7 +66,7 @@ export default class ScatterPlot extends React.Component {
             />
           </g>
         </svg>
-        <p className='answerTitle'><FaArrowsAltH/> {label[0]} <FaArrowsAltV/> {label[1]}</p>
+        
       </div>
       
     )
@@ -91,6 +94,8 @@ class RenderCircles extends React.Component {
           style={{fill: "blue"}}
           className="last_circle"
           key={i}
+
+          
         />
     ))
     return <g>{renderCircles}</g>
