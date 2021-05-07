@@ -41,7 +41,6 @@ export default class ScatterPlot extends React.Component {
 
     return (
       <div>
-        <div className='toolTip'><span class="tooltiptext"></span></div>
         <p className='answerTitle'><FaArrowsAltH/> {label[0]} <FaArrowsAltV/> {label[1]}</p>
         <svg
           viewBox='0 0 800 600'
@@ -91,12 +90,12 @@ class RenderCircles extends React.Component {
           cx={this.props.scale.x(coords[0])}
           cy={this.props.scale.y(coords[1])}
           r="12"
-          style={{fill: "blue"}}
+          style={{fill: "rgba(253, 21, 78, 1)"}}
           className="last_circle"
           key={i}
-
-          
-        />
+        />,
+        <div dangerouslySetInnerHTML={{__html: '<strong>You</strong>'}} />
+        
     ))
     return <g>{renderCircles}</g>
   }

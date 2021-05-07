@@ -36,7 +36,9 @@ const Quiz = ({ data }) => {
             .processSync(quiz.articleBody)
         }}
       />
-      
+      <div className='sliderTitle'>
+        <h3>Tell Us How You Feel, with the Sentiment Slider</h3>
+        </div>
       <Slider
         quizName={quiz.quizName}
         xQuestion={quiz.xQuestion}

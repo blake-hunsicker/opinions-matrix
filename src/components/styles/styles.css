@@ -176,6 +176,14 @@ main .answerTitle {
   padding: 1em;
 }
 
+main .sliderTitle {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  margin: 0 1rem 4rem;
+  text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
   main .hero, main .article-body, main .article {
     -ms-grid-column: 1;
