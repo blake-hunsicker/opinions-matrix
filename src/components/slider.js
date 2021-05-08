@@ -92,7 +92,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
           </div>
           <div className='range-container'>
             {
-              UI == 'secondQuestionGray' ?
+              UI === 'secondQuestionGray' ?
                 <>
                   <div className='question'>
                     <label>{xQuestion}</label>
@@ -113,7 +113,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                     </div>
                   </div>
                 </>
-              : UI == 'secondQuestionHidden' ?
+              : UI === 'secondQuestionHidden' ?
                 <>
                   <div className='question'>
                     {/* <h1>SecondQuestionHidden</h1> */}

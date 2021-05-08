@@ -86,21 +86,21 @@ class RenderCircles extends React.Component {
           key={i}
         />
       :
-        <circle
-          cx={this.props.scale.x(coords[0])}
-          cy={this.props.scale.y(coords[1])}
-          r="12"
-          style={{fill: "rgba(253, 21, 78, 1)"}}
-          className="last_circle"
-          key={i}
-        />
-        // ,
-        // <text 
-        // className="circleLabel"
-        // x={this.props.scale.x(coords[0])+20}
-        // y={this.props.scale.y(coords[1])}
-        // >You
-        // </text>
+        // <circle
+        //   cx={this.props.scale.x(coords[0])}
+        //   cy={this.props.scale.y(coords[1])}
+        //   r="12"
+        //   style={{fill: "rgba(253, 21, 78, 1)"}}
+        //   className="last_circle"
+        //   key={i}
+        // />
+        <text 
+        className="circleLabel"
+        x={this.props.scale.x(coords[0])+20}
+        y={this.props.scale.y(coords[1])}
+        style={{ fill: 'blue'}}
+        >You
+        </text>
     ))
     return <g>{renderCircles}</g>
   }
