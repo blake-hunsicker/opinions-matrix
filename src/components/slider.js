@@ -68,6 +68,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
     quiz.orderBy('clickTime', 'desc').onSnapshot((querySnapshot) => {
       const graphData = []
       const clicks = []
+      const allClicks = querySnapshot.size
       querySnapshot.forEach((doc) => {
         const clickId = doc.id
         const xAnswer = doc.data().x
@@ -91,21 +92,49 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
             <ScatterPlot label={[xQuestion, yQuestion]}  data={graphData} xTicks={[xRangeLowTickLabel,xRangeMidTickLabel,xRangeHighTickLabel]} yTicks={[yRangeLowTickLabel,yRangeMidTickLabel,yRangeHighTickLabel]} />
           </div>
           <div className='range-container'>
+            <h3 className='range-title'>Share Your Opinion</h3>
+            <h5 className='respondent-count'>{allClicks} people have responded</h5>
             {
               UI == 'secondQuestionGray' ?
                 <>
                   <div className='question'>
                     <label>{xQuestion}</label>
-                    <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
-                    <div className="ticks">
-                      <span className="tick">{xRangeLowTickLabel}</span>
-                      <span className="tick">{xRangeMidTickLabel}</span>
-                      <span className="tick">{xRangeHighTickLabel}</span>
+                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
+                    <datalist id='tickmarks'>
+                      <option value='1' className='prominent-tick'></option>
+                      <option value='10'></option>
+                      <option value='20'></option>
+                      <option value='30'></option>
+                      <option value='40'></option>
+                      <option value='50' className='prominent-tick'></option>
+                      <option value='60'></option>
+                      <option value='70'></option>
+                      <option value='80'></option>
+                      <option value='90'></option>
+                      <option value='100' className='prominent-tick'></option>
+                    </datalist>
+                    <div className='ticks'>
+                      <span className='tick'>{xRangeLowTickLabel}</span>
+                      <span className='tick'>{xRangeMidTickLabel}</span>
+                      <span className='tick'>{xRangeHighTickLabel}</span>
                     </div>
                   </div>
                   <div className='question disabled'>
                     <label>{yQuestion}</label>
-                    <input disabled type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <input disabled type='range' list='tickmarks' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <datalist id='tickmarks'>
+                      <option value='1' className='prominent-tick'></option>
+                      <option value='10'></option>
+                      <option value='20'></option>
+                      <option value='30'></option>
+                      <option value='40'></option>
+                      <option value='50' className='prominent-tick'></option>
+                      <option value='60'></option>
+                      <option value='70'></option>
+                      <option value='80'></option>
+                      <option value='90'></option>
+                      <option value='100' className='prominent-tick'></option>
+                    </datalist>
                     <div className="ticks">
                       <span className="tick">{yRangeLowTickLabel}</span>
                       <span className="tick">{yRangeMidTickLabel}</span>
@@ -139,7 +168,20 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                 <>
                   <div className='question'>
                     <label>{xQuestion}</label>
-                    <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' />
+                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' />
+                    <datalist id='tickmarks'>
+                      <option value='1' className='prominent-tick'></option>
+                      <option value='10'></option>
+                      <option value='20'></option>
+                      <option value='30'></option>
+                      <option value='40'></option>
+                      <option value='50' className='prominent-tick'></option>
+                      <option value='60'></option>
+                      <option value='70'></option>
+                      <option value='80'></option>
+                      <option value='90'></option>
+                      <option value='100' className='prominent-tick'></option>
+                    </datalist>
                     <div className="ticks">
                       <span className="tick">{xRangeLowTickLabel}</span>
                       <span className="tick">{xRangeMidTickLabel}</span>
@@ -148,7 +190,20 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                   </div>
                   <div className='question'>
                     <label>{yQuestion}</label>
-                    <input type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <datalist id='tickmarks'>
+                      <option value='1' className='prominent-tick'></option>
+                      <option value='10'></option>
+                      <option value='20'></option>
+                      <option value='30'></option>
+                      <option value='40'></option>
+                      <option value='50' className='prominent-tick'></option>
+                      <option value='60'></option>
+                      <option value='70'></option>
+                      <option value='80'></option>
+                      <option value='90'></option>
+                      <option value='100' className='prominent-tick'></option>
+                    </datalist>
                     <div className="ticks">
                       <span className="tick">{yRangeLowTickLabel}</span>
                       <span className="tick">{yRangeMidTickLabel}</span>

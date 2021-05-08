@@ -63,9 +63,8 @@ main .articlePhoto {
 }
 
 main .article-body {
-  border-bottom: 1px solid black;
-  padding-bottom: 3rem;
-  margin-bottom: 5rem;
+  padding-bottom: 0rem;
+  margin-bottom: 2rem;
 }
 
 main .container {
@@ -96,7 +95,21 @@ main .range-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
+  padding: 1rem;
+  background: #eee;
   margin: 0 1rem 4rem;
+}
+
+main .range-container .range-title {
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+main .range-container .respondent-count {
+  font-weight: 400;
+  color: #555;
+  text-align: center;
+  margin: 0 0 2rem;
 }
 
 main .range-container .question {
