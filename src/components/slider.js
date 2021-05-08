@@ -95,7 +95,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
             <h3 className='range-title'>Share Your Opinion</h3>
             <h5 className='respondent-count'>{allClicks} people have responded</h5>
             {
-              UI == 'secondQuestionGray' ?
+              UI === 'secondQuestionGray' ?
                 <>
                   <div className='question'>
                     <label>{xQuestion}</label>
@@ -142,7 +142,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                     </div>
                   </div>
                 </>
-              : UI == 'secondQuestionHidden' ?
+              : UI === 'secondQuestionHidden' ?
                 <>
                   <div className='question'>
                     {/* <h1>SecondQuestionHidden</h1> */}
@@ -217,7 +217,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                 See How You Compare To Others...
               </button>
               <button className='skip-button' onClick={skipToAnswers}>
-                Skip and See Answers
+                Skip to Responses
               </button>
             </div>
           </div>

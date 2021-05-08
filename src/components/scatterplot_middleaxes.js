@@ -1,6 +1,7 @@
 import React from "react"
 import { scaleLinear, axisLeft, axisBottom, select, min } from "d3"
 import { FaArrowsAltV, FaArrowsAltH } from 'react-icons/fa';
+
 function sortNumber(a, b) {
   return a - b
 }
@@ -40,6 +41,7 @@ export default class ScatterPlot extends React.Component {
 
     return (
       <div>
+        <p className='answerTitle'><FaArrowsAltH/> {label[0]} <FaArrowsAltV/> {label[1]}</p>
         <svg
           viewBox='0 0 800 600'
           className="chart"
@@ -63,7 +65,7 @@ export default class ScatterPlot extends React.Component {
             />
           </g>
         </svg>
-        <p className='answerTitle'><FaArrowsAltH/> {label[0]} <FaArrowsAltV/> {label[1]}</p>
+        
       </div>
       
     )
@@ -84,14 +86,21 @@ class RenderCircles extends React.Component {
           key={i}
         />
       :
-        <circle
-          cx={this.props.scale.x(coords[0])}
-          cy={this.props.scale.y(coords[1])}
-          r="12"
-          style={{fill: "blue"}}
-          className="last_circle"
-          key={i}
-        />
+        // <circle
+        //   cx={this.props.scale.x(coords[0])}
+        //   cy={this.props.scale.y(coords[1])}
+        //   r="12"
+        //   style={{fill: "rgba(253, 21, 78, 1)"}}
+        //   className="last_circle"
+        //   key={i}
+        // />
+        <text 
+        className="circleLabel"
+        x={this.props.scale.x(coords[0])+20}
+        y={this.props.scale.y(coords[1])}
+        style={{ fill: 'blue'}}
+        >You
+        </text>
     ))
     return <g>{renderCircles}</g>
   }

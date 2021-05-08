@@ -36,7 +36,10 @@ const Quiz = ({ data }) => {
             .processSync(quiz.articleBody)
         }}
       />
-      
+      <div className='ssBox'>
+      <div className='sliderTitle'>
+        <h3>Use the Sentiment Slider to Tell Us What You Think</h3>
+        </div>
       <Slider
         quizName={quiz.quizName}
         xQuestion={quiz.xQuestion}
@@ -50,8 +53,9 @@ const Quiz = ({ data }) => {
         UI={quiz.UI}
       />
       </div>
+      </div>
     </Layout>
-
+   
   )
 }
 export const query = graphql`

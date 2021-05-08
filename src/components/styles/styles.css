@@ -114,6 +114,7 @@ main .range-container .respondent-count {
 
 main .range-container .question {
   margin: 1rem 0 4rem;
+  text-align: center;
 }
 
 main .range-container .question label {
@@ -187,6 +188,22 @@ main .answerTitle {
   border: 1px dotted gray;
   margin: 3em;
   padding: 1em;
+}
+
+main .sliderTitle {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  margin: 0 1rem 4rem;
+  text-align: center;
+}
+
+.ssBox {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  margin: 10px;
+  border: 1px solid black;
 }
 
 @media only screen and (min-width: 768px) {
