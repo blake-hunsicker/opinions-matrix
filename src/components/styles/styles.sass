@@ -55,76 +55,64 @@ main
   .quiz-list
     grid-column: 1 / 9
     margin: 0 1rem
-  .ssBox 
+  .scatter-plot
     grid-column: 1 / 9
-    padding: 1.4rem
+    margin: 0 1rem
+    .tick:nth-child(3)  // to hide middle tick on scatter plot
+      visibility: hidden
+  .range-container
+    grid-column: 1 / 9
+    padding: 1rem
     background: #eee
-    border-radius: $RoundedCorners
     margin: 0 1rem 4rem
-    .range-hero
+    .range-title
+      text-align: center
+      margin: 0 0 1rem
+    .respondent-count
+      font-weight: 400
+      color: #555
+      text-align: center
+      margin: 0 0 2rem
+    .question
       margin: 1rem 0 4rem
-      .range-title
-        text-align: center
-        margin: 0
-      .respondent-count
-        font-weight: 400
+      text-align: center
+      label
+        display: block
+        margin: 0 0 1rem
+      input
+        width: 100%
+        cursor: pointer
+      .ticks
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        .tick
+          grid-column: span 1
+          text-align: center
+        .tick:nth-of-type(1)
+          text-align: left
+        .tick:nth-of-type(3)
+          text-align: right
+    .buttons // to stack buttons...
+      display: flex
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+      margin-bottom: 10px
+      button
+        color: white
+        padding: 1rem
+        background: $BGDarkBlue
+        border: none
+        border-radius: $RoundedCorners
+        margin-top: 1rem
+      .skip-button
         color: $BGMediumGray
-        text-align: center
-        margin: 1rem 0 0
-    .scatter-plot
-      grid-column: 1 / 9
-      margin: 0 1rem
-      .tick:nth-child(3)  // to hide middle tick on scatter plot
-        visibility: hidden
-    .range-container
-      grid-column: 1 / 9
-      .question
-        margin: 2rem 0 3rem
-        text-align: center
-        .slider
-          background: red
-        label
-          display: block
-          margin: 0 0 1rem
-        input
-          width: 100%
-          cursor: pointer
-        .ticks
-          display: grid
-          grid-template-columns: repeat(3, 1fr)
-          .tick
-            color: $BGMediumGray
-            font-size: 0.8rem
-            font-weight: bold
-            grid-column: span 1
-            text-align: center
-          .tick:nth-of-type(1)
-            text-align: left
-          .tick:nth-of-type(3)
-            text-align: right
-      .buttons
-        display: flex
-        flex-flow: column nowrap
-        justify-content: center
-        align-items: center
-        margin: 4rem 0 0
-        button
-          cursor: pointer
-          color: white
-          padding: 1rem
-          background: $BGDarkBlue
-          border: none
-          border-radius: $RoundedCorners
-          margin-top: 1rem
-        .skip-button
-          color: $BGMediumGray
-          background: none
-          border: none
-          &:hover
-            color: $BGDarkGray
-        .disabled
-          color: white
-          background: $BGDarkBlueOpaque
+        background: none
+        border: none
+      .disabled
+        color: white
+        background: $BGDarkBlueOpaque
+        // border: 1px solid $BGDarkBlueOpaque!important
   .past-clicks
     display: none
     grid-column: 2 / 8
@@ -143,13 +131,14 @@ main
     grid-column: 1 / 9
     margin: 0 1rem 4rem
     text-align: center
-    font-family: Miller,Georgia,Times,Times New Roman,serif // Mirroring Globe Opinion Font
+    font-family: Miller,Georgia,Times,Times New Roman,serif
+    padding-top: 15px
     
 .ssBox 
   grid-column: 1 / 9
   margin: 10px
   border: 1px solid black
-  background: #f4f4f4
+  background-color: #eee
 
 @media only screen and ( min-width: 768px )
   main

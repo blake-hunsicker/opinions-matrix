@@ -76,92 +76,74 @@ main .quiz-list {
   margin: 0 1rem;
 }
 
-main .ssBox {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / 9;
-  padding: 1.4rem;
-  background: #eee;
-  border-radius: 0.4rem;
-  margin: 0 1rem 4rem;
-}
-
-main .ssBox .range-hero {
-  margin: 1rem 0 4rem;
-}
-
-main .ssBox .range-hero .range-title {
-  text-align: center;
-  margin: 0;
-}
-
-main .ssBox .range-hero .respondent-count {
-  font-weight: 400;
-  color: #777777;
-  text-align: center;
-  margin: 1rem 0 0;
-}
-
-main .ssBox .scatter-plot {
+main .scatter-plot {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
   margin: 0 1rem;
 }
 
-main .ssBox .scatter-plot .tick:nth-child(3) {
+main .scatter-plot .tick:nth-child(3) {
   visibility: hidden;
 }
 
-main .ssBox .range-container {
+main .range-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
+  padding: 1rem;
+  background: #eee;
+  margin: 0 1rem 4rem;
 }
 
-main .ssBox .range-container .question {
-  margin: 2rem 0 3rem;
+main .range-container .range-title {
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+main .range-container .respondent-count {
+  font-weight: 400;
+  color: #555;
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+main .range-container .question {
+  margin: 1rem 0 4rem;
   text-align: center;
 }
 
-main .ssBox .range-container .question .slider {
-  background: red;
-}
-
-main .ssBox .range-container .question label {
+main .range-container .question label {
   display: block;
   margin: 0 0 1rem;
 }
 
-main .ssBox .range-container .question input {
+main .range-container .question input {
   width: 100%;
   cursor: pointer;
 }
 
-main .ssBox .range-container .question .ticks {
+main .range-container .question .ticks {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
 
-main .ssBox .range-container .question .ticks .tick {
-  color: #777777;
-  font-size: 0.8rem;
-  font-weight: bold;
+main .range-container .question .ticks .tick {
   grid-column: span 1;
   text-align: center;
 }
 
-main .ssBox .range-container .question .ticks .tick:nth-of-type(1) {
+main .range-container .question .ticks .tick:nth-of-type(1) {
   text-align: left;
 }
 
-main .ssBox .range-container .question .ticks .tick:nth-of-type(3) {
+main .range-container .question .ticks .tick:nth-of-type(3) {
   text-align: right;
 }
 
-main .ssBox .range-container .buttons {
+main .range-container .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,11 +157,10 @@ main .ssBox .range-container .buttons {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 4rem 0 0;
+  margin-bottom: 10px;
 }
 
-main .ssBox .range-container .buttons button {
-  cursor: pointer;
+main .range-container .buttons button {
   color: white;
   padding: 1rem;
   background: #005DC7;
@@ -188,17 +169,13 @@ main .ssBox .range-container .buttons button {
   margin-top: 1rem;
 }
 
-main .ssBox .range-container .buttons .skip-button {
+main .range-container .buttons .skip-button {
   color: #777777;
   background: none;
   border: none;
 }
 
-main .ssBox .range-container .buttons .skip-button:hover {
-  color: #444444;
-}
-
-main .ssBox .range-container .buttons .disabled {
+main .range-container .buttons .disabled {
   color: white;
   background: rgba(0, 93, 199, 0.5);
 }
@@ -232,6 +209,7 @@ main .sliderTitle {
   margin: 0 1rem 4rem;
   text-align: center;
   font-family: Miller,Georgia,Times,Times New Roman,serif;
+  padding-top: 15px;
 }
 
 .ssBox {
@@ -240,7 +218,7 @@ main .sliderTitle {
   grid-column: 1 / 9;
   margin: 10px;
   border: 1px solid black;
-  background: #f4f4f4;
+  background-color: #eee;
 }
 
 @media only screen and (min-width: 768px) {

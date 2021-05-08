@@ -10,8 +10,6 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
   React.useEffect(() => {
     const quiz = Firebase.firestore().collection('quizzes').doc(`${quizName}`).collection('clicks')
 
-    
-
     function enableNextQuestion(e) {
       e.preventDefault()
       const disabledSlider = document.querySelector('.question.disabled')
@@ -90,20 +88,17 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
       })
       setData(
         <>
-          <div className='range-hero'>
-            <h2 className='range-title'>Share Your Opinion</h2>
-            <h5 className='respondent-count'>{allClicks} people have responded</h5>
-          </div>
           <div className='scatter-plot hidden'>
             <ScatterPlot label={[xQuestion, yQuestion]}  data={graphData} xTicks={[xRangeLowTickLabel,xRangeMidTickLabel,xRangeHighTickLabel]} yTicks={[yRangeLowTickLabel,yRangeMidTickLabel,yRangeHighTickLabel]} />
           </div>
           <div className='range-container'>
+            {/* <h3 className='range-title'>Share Your Opinion</h3> */}
             {
               UI === 'secondQuestionGray' ?
                 <>
                   <div className='question'>
                     <label>{xQuestion}</label>
-                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='0' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
+                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
                     <datalist id='tickmarks'>
                       <option value='1' className='prominent-tick'></option>
                       <option value='10'></option>
@@ -125,7 +120,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                   </div>
                   <div className='question disabled'>
                     <label>{yQuestion}</label>
-                    <input disabled type='range' list='tickmarks' min='1' max='100' defaultValue='0' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <input disabled type='range' list='tickmarks' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
                     <datalist id='tickmarks'>
                       <option value='1' className='prominent-tick'></option>
                       <option value='10'></option>
@@ -172,7 +167,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                 <>
                   <div className='question'>
                     <label>{xQuestion}</label>
-                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='0' className='questionOne' id='questionOne' />
+                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' />
                     <datalist id='tickmarks'>
                       <option value='1' className='prominent-tick'></option>
                       <option value='10'></option>
@@ -194,7 +189,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                   </div>
                   <div className='question'>
                     <label>{yQuestion}</label>
-                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='0' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+                    <input type='range' list='tickmarks' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
                     <datalist id='tickmarks'>
                       <option value='1' className='prominent-tick'></option>
                       <option value='10'></option>
@@ -216,6 +211,7 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                   </div>
                 </>
             }
+            <h5 className='respondent-count'>{allClicks} people have responded</h5>
             <div className='buttons'>
               <button className='submit-button disabled'>
                 See How You Compare To Others...

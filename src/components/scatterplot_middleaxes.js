@@ -86,7 +86,7 @@ class RenderCircles extends React.Component {
           key={i}
         />
       :
-        <>
+        <> // empty element to group circle + text
         <circle
           cx={this.props.scale.x(coords[0])}
           cy={this.props.scale.y(coords[1])}
