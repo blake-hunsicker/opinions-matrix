@@ -93,13 +93,14 @@ class RenderCircles extends React.Component {
           style={{fill: "rgba(253, 21, 78, 1)"}}
           className="last_circle"
           key={i}
-        />,
-        <text 
-        className="circleLabel"
-        x={this.props.scale.x(coords[0])+20}
-        y={this.props.scale.y(coords[1])}
-        >You
-        </text>
+        />
+        // ,
+        // <text 
+        // className="circleLabel"
+        // x={this.props.scale.x(coords[0])+20}
+        // y={this.props.scale.y(coords[1])}
+        // >You
+        // </text>
     ))
     return <g>{renderCircles}</g>
   }
