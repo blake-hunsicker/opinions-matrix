@@ -62,12 +62,6 @@ main .articlePhoto {
   max-width: 100%;
 }
 
-main .article-body {
-  border-bottom: 1px solid black;
-  padding-bottom: 3rem;
-  margin-bottom: 5rem;
-}
-
 main .container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
@@ -101,6 +95,7 @@ main .range-container {
 
 main .range-container .question {
   margin: 1rem 0 4rem;
+  text-align: center;
 }
 
 main .range-container .question label {
@@ -182,6 +177,14 @@ main .sliderTitle {
   grid-column: 1 / 9;
   margin: 0 1rem 4rem;
   text-align: center;
+}
+
+.ssBox {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  margin: 10px;
+  border: 1px solid black;
 }
 
 @media only screen and (min-width: 768px) {

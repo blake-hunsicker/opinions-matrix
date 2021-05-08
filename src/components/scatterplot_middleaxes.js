@@ -94,8 +94,12 @@ class RenderCircles extends React.Component {
           className="last_circle"
           key={i}
         />,
-        <div dangerouslySetInnerHTML={{__html: '<strong>You</strong>'}} />
-        
+        <text 
+        className="circleLabel"
+        x={this.props.scale.x(coords[0])+20}
+        y={this.props.scale.y(coords[1])}
+        >You
+        </text>
     ))
     return <g>{renderCircles}</g>
   }
