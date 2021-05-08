@@ -142,29 +142,29 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
                     </div>
                   </div>
                 </>
-              : UI === 'secondQuestionHidden' ?
-                <>
-                  <div className='question'>
-                    {/* <h1>SecondQuestionHidden</h1> */}
-                    <label>{xQuestion}</label>
-                    <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
-                    <div className="ticks">
-                      <span className="tick">{xRangeLowTickLabel}</span>
-                      <span className="tick">{xRangeMidTickLabel}</span>
-                      <span className="tick">{xRangeHighTickLabel}</span>
-                    </div>
-                  </div>
-                  <div className='question hidden'>
-                    <label>{yQuestion}</label>
-                    <input disabled type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
-                    <div className="ticks">
-                      <span className="tick">{yRangeLowTickLabel}</span>
-                      <span className="tick">{yRangeMidTickLabel}</span>
-                      <span className="tick">{yRangeHighTickLabel}</span>
-                    </div>
-                  </div>
-                </>
-                :
+              // : UI === 'secondQuestionHidden' ?
+              //   <>
+              //     <div className='question'>
+              //       {/* <h1>SecondQuestionHidden</h1> */}
+              //       <label>{xQuestion}</label>
+              //       <input type='range' min='1' max='100' defaultValue='50' className='questionOne' id='questionOne' onClick={enableNextQuestion} />
+              //       <div className="ticks">
+              //         <span className="tick">{xRangeLowTickLabel}</span>
+              //         <span className="tick">{xRangeMidTickLabel}</span>
+              //         <span className="tick">{xRangeHighTickLabel}</span>
+              //       </div>
+              //     </div>
+              //     <div className='question hidden'>
+              //       <label>{yQuestion}</label>
+              //       <input disabled type='range' min='1' max='100' defaultValue='50' className='questionTwo' id='questionTwo' onChange={enableSubmit} />
+              //       <div className="ticks">
+              //         <span className="tick">{yRangeLowTickLabel}</span>
+              //         <span className="tick">{yRangeMidTickLabel}</span>
+              //         <span className="tick">{yRangeHighTickLabel}</span>
+              //       </div>
+              //     </div>
+              //   </>
+              :
                 <>
                   <div className='question'>
                     <label>{xQuestion}</label>
