@@ -65,12 +65,15 @@ export default class ScatterPlot extends React.Component {
           </g>
           <text 
             className='answerTitle'
-            transform={"translate(" + width*0.35 + ", " + height*0.95 + ")"}>
+            textAnchor='start'
+            textDecoration='underline'
+            transform={"translate(" + width*0.30 + ", " + height*0.98 + ")"}>
               <FaArrowsAltV/> {label[1]}
           </text>
           <text
             className='answerTitle'
             width='20px'
+            textDecoration='underline'
             transform={"translate(" + 15 + ", " + height*0.62 + ")"}>
               <FaArrowsAltH/> {label[0]}
           </text> 
@@ -92,7 +95,7 @@ class RenderCircles extends React.Component {
           cx={this.props.scale.x(coords[0])}
           cy={this.props.scale.y(coords[1])}
           r="8"
-          style={{ fill: "rgba(253, 21, 78, 0.3)" }}
+          style={{ fill: "rgba(0, 93, 199, 0.5)", zIndex: '2' }}
           key={i}
         />
       :
@@ -101,7 +104,7 @@ class RenderCircles extends React.Component {
           cx={this.props.scale.x(coords[0])}
           cy={this.props.scale.y(coords[1])}
           r="12"
-          style={{fill: "#005DC7"}}
+          style={{fill: "#DE7D08", zIndex: '1'}}
           className="last_circle"
           key={i}
         />
@@ -109,7 +112,7 @@ class RenderCircles extends React.Component {
           className="circleLabel"
           x={this.props.scale.x(coords[0])+14}
           y={this.props.scale.y(coords[1])+5}
-          style={{ fill: '#005DC7'}}
+          style={{ fill: '#black', zIndex:'1'}}
           >Your Response
           </text>
         </>

@@ -46,6 +46,8 @@ const Sliders = ({quizName, xQuestion, xRangeLowTickLabel, xRangeMidTickLabel, x
       // AJB / added this lastCircle toggle to turn off most recent circle if user 'skips'
       const lastCircle = document.querySelector('.last_circle')
       lastCircle.classList.toggle('hidden')
+      const circleLabel = document.querySelector('.circleLabel')
+      circleLabel.classList.toggle('hidden')
       
     }
 
