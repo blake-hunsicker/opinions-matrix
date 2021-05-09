@@ -19,6 +19,11 @@ nav {
           filter: blur(0px);
 }
 
+input[type=range]::-webkit-slider-runnable-track {
+  background: #e9eaeb;
+  border-radius: 10px;
+}
+
 nav a {
   text-decoration: none;
 }
