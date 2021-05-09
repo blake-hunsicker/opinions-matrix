@@ -196,10 +196,9 @@ main .past-clicks .past-click {
 
 main .answerTitle {
   text-align: center;
-  font-size: small;
+  font-size: smaller;
   border: 1px dotted gray;
-  margin: 3em;
-  padding: 1em;
+  width: 50px;
 }
 
 main .sliderTitle {
@@ -210,6 +209,7 @@ main .sliderTitle {
   text-align: center;
   font-family: Miller,Georgia,Times,Times New Roman,serif;
   padding-top: 15px;
+  color: #005DC7;
 }
 
 .ssBox {

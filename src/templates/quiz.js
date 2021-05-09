@@ -38,7 +38,7 @@ const Quiz = ({ data }) => {
       />
       <div className='ssBox'>
       <div className='sliderTitle'>
-        <h3>Use the Sentiment Slider to Tell Us What You Think</h3>
+        <h3>Tell Us What You Think, Use the Sentiment Slider!</h3>
         </div>
       <Slider
         quizName={quiz.quizName}
